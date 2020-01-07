@@ -11,9 +11,7 @@
     <van-grid-item v-for="value in categories" :key="value.id" :icon="value.icon" :text="value.name" />
    </van-grid>
    <!-- 产品n个 -->
-   <van-grid :column-num="1" icon-size="350px">
-    <van-grid-item v-for="value in products" :key="value.id" :icon="value.photo" :text="value.name" />
-   </van-grid>
+    <briup-product-item @click="toBuyHandler(p)" v-for="p in products" :key="p.id" :data="p"/>
    </div>
    <!-- /内容 -->
   </div>
@@ -36,6 +34,12 @@ export default {
     this.loadProducts();
   },
   methods:{
+    toBuyHandler(p){
+      this.$router.push({
+        path:"/manager/order_confirm",
+        query:p
+      })
+    },
     //加载栏目信息
     loadCategories(){
       let url = "/category/findAll";
