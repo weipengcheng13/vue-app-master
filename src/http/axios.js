@@ -4,7 +4,7 @@ import {Toast} from 'vant'
 import router from '../router'
 
 // 全局配置
-axios.defaults.baseURL = 'http://localhost:6677';
+axios.defaults.baseURL = 'http://123.57.92.11:6677';
 
 
 // Add a response interceptor
